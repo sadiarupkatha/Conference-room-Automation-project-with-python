@@ -1,0 +1,607 @@
+{
+  "application": "Conference Room Booking Application (CRBA)",
+  "version": "1.0",
+  "reviewDate": "2025-01-27",
+  "locators": {
+    "header": {
+      "menuToggle": {
+        "id": "menu-toggle",
+        "type": "button",
+        "description": "Hamburger menu toggle button"
+      },
+      "userInfo": {
+        "id": "user-info",
+        "type": "div",
+        "description": "User information container (visible when logged in)"
+      },
+      "userAvatar": {
+        "id": "user-avatar",
+        "type": "div",
+        "description": "User avatar display"
+      },
+      "userName": {
+        "id": "user-name",
+        "type": "span",
+        "description": "User name display"
+      },
+      "authButtons": {
+        "id": "auth-buttons",
+        "type": "div",
+        "description": "Authentication buttons container"
+      },
+      "loginBtn": {
+        "id": "login-btn",
+        "type": "button",
+        "description": "Login button in header"
+      },
+      "registerBtn": {
+        "id": "register-btn",
+        "type": "button",
+        "description": "Register button in header"
+      }
+    },
+    "sidebar": {
+      "sidebar": {
+        "id": "sidebar",
+        "type": "aside",
+        "description": "Sidebar navigation container"
+      },
+      "quickBookBtn": {
+        "id": "quick-book-btn",
+        "type": "a",
+        "description": "Quick book navigation link"
+      },
+      "profileBtn": {
+        "id": "profile-btn",
+        "type": "a",
+        "description": "Profile settings link"
+      },
+      "notificationsBtn": {
+        "id": "notifications-btn",
+        "type": "a",
+        "description": "Notifications link"
+      },
+      "sidebarLogout": {
+        "id": "sidebar-logout",
+        "type": "a",
+        "description": "Logout link"
+      }
+    },
+    "sections": {
+      "mainContent": {
+        "id": "main-content",
+        "type": "main",
+        "description": "Main content container"
+      },
+      "dashboard": {
+        "id": "dashboard",
+        "type": "section",
+        "description": "Dashboard section",
+        "dataAttribute": "data-section=\"dashboard\""
+      },
+      "rooms": {
+        "id": "rooms",
+        "type": "section",
+        "description": "Conference rooms section",
+        "dataAttribute": "data-section=\"rooms\""
+      },
+      "roomDetails": {
+        "id": "room-details",
+        "type": "section",
+        "description": "Room details section"
+      },
+      "myBookings": {
+        "id": "my-bookings",
+        "type": "section",
+        "description": "My bookings section",
+        "dataAttribute": "data-section=\"my-bookings\""
+      },
+      "findRoom": {
+        "id": "find-room",
+        "type": "section",
+        "description": "Find available room section",
+        "dataAttribute": "data-section=\"find-room\""
+      }
+    },
+    "dashboard": {
+      "statsGrid": {
+        "id": "stats-grid",
+        "type": "div",
+        "description": "Statistics grid container"
+      },
+      "quickBookAction": {
+        "id": "quick-book-action",
+        "type": "button",
+        "description": "Quick book action button"
+      },
+      "profileAction": {
+        "id": "profile-action",
+        "type": "button",
+        "description": "Profile action button"
+      },
+      "recentBookings": {
+        "id": "recent-bookings",
+        "type": "div",
+        "description": "Recent bookings list container"
+      },
+      "featuredRooms": {
+        "id": "featured-rooms",
+        "type": "div",
+        "description": "Featured rooms grid container"
+      }
+    },
+    "roomFilters": {
+      "capacityFilter": {
+        "id": "capacity-filter",
+        "type": "select",
+        "description": "Room capacity filter dropdown"
+      },
+      "featureFilter": {
+        "id": "feature-filter",
+        "type": "select",
+        "description": "Room features filter dropdown"
+      },
+      "dateFilter": {
+        "id": "date-filter",
+        "type": "input",
+        "inputType": "date",
+        "description": "Date filter input"
+      },
+      "timeFilter": {
+        "id": "time-filter",
+        "type": "input",
+        "inputType": "time",
+        "description": "Time filter input"
+      },
+      "applyFilters": {
+        "id": "apply-filters",
+        "type": "button",
+        "description": "Apply filters button"
+      },
+      "clearFilters": {
+        "id": "clear-filters",
+        "type": "button",
+        "description": "Clear filters button"
+      },
+      "allRooms": {
+        "id": "all-rooms",
+        "type": "div",
+        "description": "All rooms grid container"
+      }
+    },
+    "roomDetails": {
+      "roomDetailsTitle": {
+        "id": "room-details-title",
+        "type": "h1",
+        "description": "Room details section title"
+      },
+      "roomDetailsSubtitle": {
+        "id": "room-details-subtitle",
+        "type": "p",
+        "description": "Room details section subtitle"
+      },
+      "selectedRoomName": {
+        "id": "selected-room-name",
+        "type": "h3",
+        "description": "Selected room name display"
+      },
+      "selectedRoomLocation": {
+        "id": "selected-room-location",
+        "type": "span",
+        "description": "Selected room location display"
+      },
+      "selectedRoomCapacity": {
+        "id": "selected-room-capacity",
+        "type": "span",
+        "description": "Selected room capacity display"
+      },
+      "selectedRoomFeatures": {
+        "id": "selected-room-features",
+        "type": "div",
+        "description": "Selected room features container"
+      },
+      "roomAvailabilityText": {
+        "id": "room-availability-text",
+        "type": "span",
+        "description": "Room availability status text"
+      }
+    },
+    "bookingForm": {
+      "bookingForm": {
+        "id": "booking-form",
+        "type": "form",
+        "description": "Main booking form",
+        "dataAttribute": "data-room-id (set dynamically)"
+      },
+      "meetingTitle": {
+        "id": "meeting-title",
+        "type": "input",
+        "inputType": "text",
+        "description": "Meeting title input",
+        "required": true
+      },
+      "meetingTitleError": {
+        "id": "meeting-title-error",
+        "type": "div",
+        "description": "Meeting title error message"
+      },
+      "bookingDate": {
+        "id": "booking-date",
+        "type": "input",
+        "inputType": "date",
+        "description": "Booking date input",
+        "required": true
+      },
+      "bookingDateError": {
+        "id": "booking-date-error",
+        "type": "div",
+        "description": "Booking date error message"
+      },
+      "startTime": {
+        "id": "start-time",
+        "type": "input",
+        "inputType": "time",
+        "description": "Start time input",
+        "required": true
+      },
+      "startTimeError": {
+        "id": "start-time-error",
+        "type": "div",
+        "description": "Start time error message"
+      },
+      "endTime": {
+        "id": "end-time",
+        "type": "input",
+        "inputType": "time",
+        "description": "End time input",
+        "required": true
+      },
+      "endTimeError": {
+        "id": "end-time-error",
+        "type": "div",
+        "description": "End time error message"
+      },
+      "attendees": {
+        "id": "attendees",
+        "type": "input",
+        "inputType": "number",
+        "description": "Number of attendees input",
+        "required": true
+      },
+      "attendeesError": {
+        "id": "attendees-error",
+        "type": "div",
+        "description": "Attendees error message"
+      },
+      "meetingNotes": {
+        "id": "meeting-notes",
+        "type": "textarea",
+        "description": "Meeting notes textarea",
+        "required": false
+      },
+      "cancelBooking": {
+        "id": "cancel-booking",
+        "type": "button",
+        "description": "Cancel booking button"
+      }
+    },
+    "myBookings": {
+      "upcomingBookings": {
+        "id": "upcoming-bookings",
+        "type": "div",
+        "description": "Upcoming bookings tab content",
+        "dataAttribute": "data-tab=\"upcoming\""
+      },
+      "pastBookings": {
+        "id": "past-bookings",
+        "type": "div",
+        "description": "Past bookings tab content",
+        "dataAttribute": "data-tab=\"past\""
+      }
+    },
+    "findRoom": {
+      "searchDate": {
+        "id": "search-date",
+        "type": "input",
+        "inputType": "date",
+        "description": "Search date input"
+      },
+      "searchStartTime": {
+        "id": "search-start-time",
+        "type": "input",
+        "inputType": "time",
+        "description": "Search start time input"
+      },
+      "searchEndTime": {
+        "id": "search-end-time",
+        "type": "input",
+        "inputType": "time",
+        "description": "Search end time input"
+      },
+      "searchCapacity": {
+        "id": "search-capacity",
+        "type": "input",
+        "inputType": "number",
+        "description": "Search capacity input"
+      },
+      "searchFeatures": {
+        "id": "search-features",
+        "type": "select",
+        "multiple": true,
+        "description": "Search features multi-select"
+      },
+      "searchRooms": {
+        "id": "search-rooms",
+        "type": "button",
+        "description": "Search rooms button"
+      },
+      "searchResults": {
+        "id": "search-results",
+        "type": "div",
+        "description": "Search results grid container"
+      }
+    },
+    "loginModal": {
+      "loginModal": {
+        "id": "login-modal",
+        "type": "div",
+        "description": "Login modal container",
+        "class": "modal"
+      },
+      "loginForm": {
+        "id": "login-form",
+        "type": "form",
+        "description": "Login form"
+      },
+      "loginEmail": {
+        "id": "login-email",
+        "type": "input",
+        "inputType": "email",
+        "description": "Login email input",
+        "required": true
+      },
+      "loginEmailError": {
+        "id": "login-email-error",
+        "type": "div",
+        "description": "Login email error message"
+      },
+      "loginPassword": {
+        "id": "login-password",
+        "type": "input",
+        "inputType": "password",
+        "description": "Login password input",
+        "required": true
+      },
+      "loginPasswordError": {
+        "id": "login-password-error",
+        "type": "div",
+        "description": "Login password error message"
+      },
+      "switchToRegister": {
+        "id": "switch-to-register",
+        "type": "a",
+        "description": "Switch to register link"
+      },
+      "closeModal": {
+        "class": "close-modal",
+        "type": "button",
+        "description": "Close modal button (class selector, no ID)"
+      }
+    },
+    "registerModal": {
+      "registerModal": {
+        "id": "register-modal",
+        "type": "div",
+        "description": "Register modal container",
+        "class": "modal"
+      },
+      "registerForm": {
+        "id": "register-form",
+        "type": "form",
+        "description": "Register form"
+      },
+      "registerName": {
+        "id": "register-name",
+        "type": "input",
+        "inputType": "text",
+        "description": "Register name input",
+        "required": true
+      },
+      "registerNameError": {
+        "id": "register-name-error",
+        "type": "div",
+        "description": "Register name error message"
+      },
+      "registerEmail": {
+        "id": "register-email",
+        "type": "input",
+        "inputType": "email",
+        "description": "Register email input",
+        "required": true
+      },
+      "registerEmailError": {
+        "id": "register-email-error",
+        "type": "div",
+        "description": "Register email error message"
+      },
+      "registerPassword": {
+        "id": "register-password",
+        "type": "input",
+        "inputType": "password",
+        "description": "Register password input",
+        "required": true,
+        "minLength": 8
+      },
+      "registerPasswordError": {
+        "id": "register-password-error",
+        "type": "div",
+        "description": "Register password error message"
+      },
+      "registerConfirmPassword": {
+        "id": "register-confirm-password",
+        "type": "input",
+        "inputType": "password",
+        "description": "Register confirm password input",
+        "required": true
+      },
+      "registerConfirmPasswordError": {
+        "id": "register-confirm-password-error",
+        "type": "div",
+        "description": "Register confirm password error message"
+      },
+      "switchToLogin": {
+        "id": "switch-to-login",
+        "type": "a",
+        "description": "Switch to login link"
+      }
+    },
+    "quickBookModal": {
+      "quickBookModal": {
+        "id": "quick-book-modal",
+        "type": "div",
+        "description": "Quick book modal container",
+        "class": "modal"
+      },
+      "quickBookForm": {
+        "id": "quick-book-form",
+        "type": "form",
+        "description": "Quick book form"
+      },
+      "quickMeetingTitle": {
+        "id": "quick-meeting-title",
+        "type": "input",
+        "inputType": "text",
+        "description": "Quick book meeting title input",
+        "required": true
+      },
+      "quickDate": {
+        "id": "quick-date",
+        "type": "input",
+        "inputType": "date",
+        "description": "Quick book date input",
+        "required": true
+      },
+      "quickStartTime": {
+        "id": "quick-start-time",
+        "type": "input",
+        "inputType": "time",
+        "description": "Quick book start time input",
+        "required": true
+      },
+      "quickDuration": {
+        "id": "quick-duration",
+        "type": "select",
+        "description": "Quick book duration select",
+        "required": true,
+        "options": ["30", "60", "90", "120", "180", "240"]
+      },
+      "quickAttendees": {
+        "id": "quick-attendees",
+        "type": "input",
+        "inputType": "number",
+        "description": "Quick book attendees input",
+        "required": true
+      }
+    },
+    "toast": {
+      "toast": {
+        "id": "toast",
+        "type": "div",
+        "description": "Toast notification container",
+        "class": "toast"
+      },
+      "toastTitle": {
+        "id": "toast-title",
+        "type": "div",
+        "description": "Toast title element"
+      },
+      "toastMessage": {
+        "id": "toast-message",
+        "type": "div",
+        "description": "Toast message element"
+      }
+    },
+    "dynamicElements": {
+      "roomCard": {
+        "selector": "[data-room-id]",
+        "type": "div",
+        "description": "Room card (dynamically generated)",
+        "class": "room-card",
+        "dataAttribute": "data-room-id"
+      },
+      "bookRoomButton": {
+        "selector": "[data-room-id] .book-room",
+        "type": "button",
+        "description": "Book room button (dynamically generated)",
+        "class": "book-room",
+        "dataAttribute": "data-room-id (on parent)"
+      },
+      "bookingItem": {
+        "selector": "[data-booking-id]",
+        "type": "div",
+        "description": "Booking item (dynamically generated)",
+        "class": "booking-item",
+        "dataAttribute": "data-booking-id"
+      },
+      "viewBookingButton": {
+        "selector": "[data-booking-id] .view-booking",
+        "type": "button",
+        "description": "View booking button (dynamically generated)",
+        "class": "view-booking",
+        "dataAttribute": "data-booking-id (on parent)"
+      },
+      "editBookingButton": {
+        "selector": "[data-booking-id] .edit-booking",
+        "type": "button",
+        "description": "Edit booking button (dynamically generated)",
+        "class": "edit-booking",
+        "dataAttribute": "data-booking-id (on parent)"
+      },
+      "cancelBookingButton": {
+        "selector": "[data-booking-id] .cancel-booking",
+        "type": "button",
+        "description": "Cancel booking button (dynamically generated)",
+        "class": "cancel-booking",
+        "dataAttribute": "data-booking-id (on parent)"
+      },
+      "rebookBookingButton": {
+        "selector": "[data-room-id] .rebook-booking",
+        "type": "button",
+        "description": "Rebook booking button (dynamically generated)",
+        "class": "rebook-booking",
+        "dataAttribute": "data-room-id (on parent)"
+      }
+    },
+    "navigation": {
+      "navLinks": {
+        "selector": "[data-section]",
+        "type": "a",
+        "description": "Navigation links with data-section attribute",
+        "dataAttribute": "data-section",
+        "values": ["dashboard", "rooms", "my-bookings", "find-room"]
+      },
+      "tabs": {
+        "selector": "[data-tab]",
+        "type": "div",
+        "description": "Tab buttons with data-tab attribute",
+        "dataAttribute": "data-tab",
+        "values": ["upcoming", "past"]
+      }
+    }
+  },
+  "locatorStatistics": {
+    "totalIdLocators": 93,
+    "totalClassLocators": 298,
+    "dataAttributes": 4,
+    "forms": 4,
+    "modals": 3,
+    "sections": 5
+  },
+  "recommendations": {
+    "priority1": "Use ID locators whenever available (most stable)",
+    "priority2": "Use data attributes for dynamic content",
+    "priority3": "Use class selectors with specific context",
+    "avoid": "XPath unless absolutely necessary"
+  }
+}
+
